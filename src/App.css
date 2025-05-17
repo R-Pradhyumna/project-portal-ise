@@ -1,0 +1,19 @@
+/* Make html and body full height */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex column container to wrap your app */
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make your main content flex-grow so footer stays pushed down */
+main {
+  flex-grow: 1;
+}

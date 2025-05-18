@@ -8,7 +8,12 @@ const useDriveData = (csvUrl) => {
     Papa.parse(csvUrl, {
       download: true,
       header: true,
-      complete: (results) => setData(results.data),
+      complete: (results) => {
+        setData(results.data);
+      },
+      error: (err) => {
+        console.error("CSV Fetch Error:", err);
+      },
     });
   }, [csvUrl]);
 

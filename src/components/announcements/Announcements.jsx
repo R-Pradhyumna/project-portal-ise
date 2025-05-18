@@ -2,7 +2,7 @@ import useDriveData from "../../hooks/useDriveData";
 import "./Announcements.css";
 
 function Announcements() {
-  const csvUrl = import.meta.env.VITE_GOOGLE_SHEET_URL;
+  const csvUrl = import.meta.env.VITE_SHEET_URL;
   const data = useDriveData(csvUrl);
 
   // Filter out only rows that have a valid Announcements link

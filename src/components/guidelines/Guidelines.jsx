@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Papa from "papaparse";
 import "./Guidelines.css";
 
-const SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL;
+const sheetUrl = import.meta.env.VITE_SHEET_URL;
 
 function Guidelines() {
   const [phaseLinks, setPhaseLinks] = useState({}); // Store links by phase
@@ -15,7 +15,7 @@ function Guidelines() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(SHEET_URL);
+        const response = await fetch(sheetUrl);
         const text = await response.text();
         Papa.parse(text, {
           header: true,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Papa from "papaparse";
 import "./Project.css";
 
-const SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL;
+const sheetUrl = import.meta.env.VITE_SHEET_URL;
 
 const RESOURCE_FIELDS = [
   "Innovata Certificates",
@@ -19,7 +19,7 @@ const Project = () => {
   const [availableSchemes, setAvailableSchemes] = useState([]);
 
   useEffect(() => {
-    Papa.parse(SHEET_URL, {
+    Papa.parse(sheetUrl, {
       download: true,
       header: true,
       complete: (results) => {
